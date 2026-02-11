@@ -938,8 +938,6 @@ impl eframe::App for MyApp {
 
                             for (col, snapshot) in self.heatmap_data.iter().enumerate() {
                                 for (row, &value) in snapshot.iter().enumerate() {
-                                    let normalized_value = value.abs() * 10.0;
-                                    let intensity = (normalized_value * 255.0) as u8;
                                     let color = if value >= 0.0 {
                                         // Ask: red intensity
                                         let intensity = (value * 255.0).clamp(0.0, 255.0) as u8;
